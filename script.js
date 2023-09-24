@@ -1,7 +1,7 @@
 const inputSlider = document.querySelector('[data-lengthSlider]');
 const lengthDisplay = document.querySelector('[data-lengthNumber]');
 
-const passwordDisplay = document.querySelector('[data-passwordDisplay]');
+var passwordDisplay = document.querySelector('[data-passwordDisplay]');
 const copyBtn = document.querySelector('[data-copy]');
 const copyMsg = document.querySelector('[data-copyMsg]');
 const uppercaseCheck = document.querySelector('#uppercase');
@@ -131,8 +131,9 @@ copyBtn.addEventListener('click',()=>{
         copyContent();
 })
 
-generateBtn.addEventListener('click', ()=>{
+generateBtn.addEventListener('click',()=>{
     // none of the checkbox are selected
+    console.log("Starting the journey 0")
     if(checkCount==0)
         return;
 
@@ -178,6 +179,7 @@ generateBtn.addEventListener('click', ()=>{
     password = shufflePassword(Array.from(password));
     console.log(" shuffle addition done")
     // show in UI
+    console.log(password);
     passwordDisplay = password;
     console.log("UI addition done")
     // calculate Strength
