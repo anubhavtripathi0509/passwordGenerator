@@ -191,12 +191,29 @@ h1{
 
 .copyBtn{
     background-color: transparent;
+    color: var(--vb-cyan);
     border: none;
     outline: none;
 }
 
 .tooltip{
-    background-color: var(--vb-cyan2);
+    position: absolute;
+    background-color: var(--vb-violet2);
+    color: var(--vb-yellow);
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.tooltip.active {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .slider {
@@ -218,18 +235,16 @@ h1{
 
 .slider::-webkit-slider-thumb{
     position: relative;
-    /* z-index: 1; */
+    z-index: 1;
     appearance: none;
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
-    border-color: var(--vb-yellow);
-    color: var(--vb-yellow);
+    background: var(--vb-yellow);
     cursor: pointer;
     margin-top: -3px;
     box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
     transition: all 100ms ease-in;
-    /* overflow: visible; */
 }
 
 .slider:focus{
@@ -238,6 +253,25 @@ h1{
 }
 
 .slider::-webkit-slider-thumb:hover{
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
+
+.slider::-moz-range-thumb{
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: var(--vb-yellow);
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+}
+
+.slider::-moz-range-thumb:hover{
     outline: 2px solid var(--vb-yellow);
     background-color: var(--dk-violet);
     box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
