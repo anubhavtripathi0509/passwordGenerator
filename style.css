@@ -189,6 +189,16 @@ h1{
     letter-spacing: 0.75px;
 }
 
+.copyBtn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.tooltip{
+    background-color: var(--vb-cyan2);
+}
+
 .slider {
     /* position: absolute; */
     appearance: none;
@@ -208,7 +218,7 @@ h1{
 
 .slider::-webkit-slider-thumb{
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     appearance: none;
     height: 2rem;
     width: 2rem;
@@ -219,11 +229,12 @@ h1{
     margin-top: -3px;
     box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
     transition: all 100ms ease-in;
+    /* overflow: visible; */
 }
 
 .slider:focus{
     outline: 3px solid var(--vb-yellow);
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .slider::-webkit-slider-thumb:hover{
