@@ -134,8 +134,8 @@ copyBtn.addEventListener('click',()=>{
 generateBtn.addEventListener('click',()=>{
     // none of the checkbox are selected
     console.log("Starting the journey 0")
-    if(checkCount==0)
-        return;
+    // if(checkCount==0)
+    //     return false;
 
     if(passwordLength<checkCount){
         passwordLength = checkCount;
@@ -164,7 +164,7 @@ generateBtn.addEventListener('click',()=>{
 
     // compulsory addition
     for(let i=0; i<funcArr.length; i++){
-        password += funcArr[i];
+        password += funcArr[i]();
     }
 
     console.log("compulsory addition done")
@@ -172,6 +172,7 @@ generateBtn.addEventListener('click',()=>{
     // remaining addition
     for(let i=0; i<passwordLength-funcArr.length; i++){
         let randIndex = getRndInteger(0, funcArr.length);
+        console.log("randIndex" + randIndex);
         password += funcArr[randIndex]();
     }
     console.log("remaining addition done")
@@ -180,7 +181,7 @@ generateBtn.addEventListener('click',()=>{
     console.log(" shuffle addition done")
     // show in UI
     console.log(password);
-    passwordDisplay = password;
+    passwordDisplay.value = password;
     console.log("UI addition done")
     // calculate Strength
     calcStrength();
